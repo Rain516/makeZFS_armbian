@@ -102,6 +102,9 @@ sudo apt install log2ram
 reconnect over ssh once the reboot is done
 
 then install zfs and cokpit (give you a nice web dashboard under https://192.168.YYY.XXX:9090/
+![image](https://user-images.githubusercontent.com/15912256/194674108-69b36efa-8e62-4a1b-9cae-8dffc15cb7f5.png)
+(here is the cockpit interface)
+
 ```
 sudo su
 apt install curl
