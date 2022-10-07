@@ -105,7 +105,7 @@ def installZFS():
 	if (end_idx < 2):
 		return 2
 
- 	if (zfs_ver[end_idx] != "/"):# or zfs_ver[end_idx + 1] != "\n"):
+	if (zfs_ver[end_idx] != "/"):# or zfs_ver[end_idx + 1] != "\n"):
 		print("No zfs vertion direction founded")
 		return 3
 
