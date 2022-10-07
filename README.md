@@ -18,13 +18,14 @@ if you want to replicate the whole NAS and not juste ZFS use the following insct
 
 ## Initial setup
 you will need :
-a rockPro64
-a power supply (i used a standard computer PSU to power the hdd and the rockPro64)
-a bunch of HDD (6x 2Tb in my case)
-a fan with a molex connector (or two)
-a case
-a good SD card and optionnally a USB HDD
-a few MOLEX cable stub to make a connector for the RockPro
+
+* a rockPro64
+* a power supply (i used a standard computer PSU to power the hdd and the rockPro64)
+* a bunch of HDD (6x 2Tb in my case)
+* a fan with a molex connector (or two)
+* a case
+* a good SD card and optionnally a USB HDD
+* a few MOLEX cable stub to make a connector for the RockPro
 
 here is how it looks like
 ![photo_2022-10-08_00-29-31](https://user-images.githubusercontent.com/15912256/194671253-f7bea648-9d09-4158-951b-4457fcbe93b9.jpg)
