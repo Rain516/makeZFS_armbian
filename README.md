@@ -156,6 +156,17 @@ sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing
 echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 sudo apt-get update
 sudo apt-get install syncthing
+systemctl enable syncthing@ubuntu.service
+systemctl start syncthing@ubuntu.service
+systemctl status syncthing@ubuntu.service
+nano /home/ubuntu/.config/syncthing/config.xml
+```
+modifiy this line to expose you local IP : 
+```
+<address>192.168.1.10:8384</address>
+```
+save and exit
+```
 sudo cp /etc/samba/smb.conf /etc/samba/smb.orig
 sudo nano /etc/samba/smb.conf
 
