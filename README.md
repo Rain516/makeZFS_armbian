@@ -149,9 +149,13 @@ sudo docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name=portainer --res
 ```
 
 there is even a way to directly have your docker volume on the zfs array but i dont know how yet
-## configure Samba and NFS
+## configure Samba, syncthings and NFS
 
 ```
+sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt-get update
+sudo apt-get install syncthing
 sudo cp /etc/samba/smb.conf /etc/samba/smb.orig
 sudo nano /etc/samba/smb.conf
 
