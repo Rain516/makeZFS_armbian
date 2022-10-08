@@ -29,7 +29,6 @@ you will need :
 
 here is how it looks like
 ![photo_2022-10-08_00-29-31](https://user-images.githubusercontent.com/15912256/194671253-f7bea648-9d09-4158-951b-4457fcbe93b9.jpg)
-![photo_2022-10-08_00-29-32](https://user-images.githubusercontent.com/15912256/194671248-d3d5a9d1-f073-44bc-b879-51aa8bf9bf02.jpg)
 ![photo_2022-10-08_00-29-31 (3)](https://user-images.githubusercontent.com/15912256/194671251-cf19e09b-48c8-463a-979e-5322d387bdf1.jpg)
 ![photo_2022-10-08_00-29-31 (2)](https://user-images.githubusercontent.com/15912256/194671252-63074964-6d42-43d8-bb55-7aa28cb358b4.jpg)
 (it only draw 55 Watt with every disk spinning, probably less than that usually)
@@ -136,12 +135,17 @@ raidz2 use two drive for parity bit. you can use use raid1 for only one parity b
 
 ## setup docker and portainer
 docker allow you to run container, portainer is a nice web page to manage your portainer. its more user friendly than the shell at first
-
+here we create a volume on the ZFS array for portainer and then launche the portainer container
 ```
+sudo su ubuntu
+cd /pool
+mkdir container
+cd container
+mkdir portainer
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker ubuntu
 systemctl status docker
-sudo docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+sudo docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /pool/container/portainer:/data portainer/portainer-ce:latest
 ```
 
 there is even a way to directly have your docker volume on the zfs array but i dont know how yet
