@@ -118,6 +118,7 @@ apt install zfs-dkms zfs-zed zfsutils-linux
 sudo apt-get -y install linux-headers-current-rockchip64
 apt install samba nfs-kernel-server
 apt install docker-compose
+sudo modprobe usbcore autosuspend=-1
 sudo reboot now
 ```
 
