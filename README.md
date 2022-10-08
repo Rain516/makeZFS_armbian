@@ -119,6 +119,7 @@ sudo apt-get -y install linux-headers-current-rockchip64
 apt install samba nfs-kernel-server
 apt install docker-compose
 sudo modprobe usbcore autosuspend=-1
+udo systemctl status sleep.target suspend.target hibernate.target hybrid-sleep.target
 sudo reboot now
 ```
 
