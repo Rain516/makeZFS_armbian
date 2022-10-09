@@ -14,7 +14,7 @@ def setupEnvironments():
 					"sudo apt-get -y install gdebi wget curl flex bison dkms",
 					"sudo apt-get -y install zlib1g-dev uuid-dev libattr1-dev libblkid-dev libselinux-dev libudev-dev libaio-dev",
 					"sudo apt-get -y install parted lsscsi ksh libssl-dev libelf-dev",
-					"sudo apt-get -y install python",
+					"sudo apt-get -y install python3",
 			   ]
 	for cmd in list(cmds):
 		run_cmd(cmd)
@@ -105,7 +105,7 @@ def installZFS():
 	if (end_idx < 2):
 		return 2
 
- 	if (zfs_ver[end_idx] != "/"):# or zfs_ver[end_idx + 1] != "\n"):
+	if (zfs_ver[end_idx] != "/"):# or zfs_ver[end_idx + 1] != "\n"):
 		print("No zfs vertion direction founded")
 		return 3
 
