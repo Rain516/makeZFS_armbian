@@ -203,3 +203,13 @@ and finally
 systemctl restart smbd
 
 ```
+
+
+# More on the case 
+
+the case is made to be versatil and accomodate up to 7 board or HDD (maybe double of that for small SBC)
+here is a sample of a few different configuration 
+![image](https://user-images.githubusercontent.com/15912256/196444699-1ef1e6ca-c69f-47ab-9ae8-2a44b5a70875.png)
+
+
+here is how it looks on the inside withouth the cable on the way
