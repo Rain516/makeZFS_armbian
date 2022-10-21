@@ -204,6 +204,46 @@ systemctl restart smbd
 
 ```
 
+if you're happy with it you can stop there. if you keep reading you will setup a VPN server to remotely connect to your network and a dynDNS in case your IP is not static
+
+```
+sudo curl -L https://install.pivpn.io | sudo bash
+```
+choose what you want. i personnaly went with wireguard on the default port and openDNS as the DNS server.
+then reboot. you can add configuration with
+```
+pivpn -a
+```
+git a name. you can either use 
+```
+pivpn -qr
+```
+to get a QR code that you can scan or you can 
+```
+cat /home/ubuntu/configs/*.conf
+```
+and you can import that in a text file on your device and import it into wireguard vpn client.
+
+
+then you might want to setup a dynDNS if you own a domain from some company like OVH and you dont have a static IP.
+what it does is basically tell the OVH DNS server that your domain should point to this IP address. this IP address being the one your ISP gave you.
+and if it change the script update it automatically.
+
+```
+sudo apt-get install ddclient
+```
+then you can enter the following value given by your registrat (OVH for me)
+![image](https://user-images.githubusercontent.com/15912256/197188539-fc47749d-6dee-4c07-af22-b387624b7fdb.png)
+
+```
+Dynamic DNS service provider:other
+Dynamic DNS update protocol : dyndns2
+Dynamic DNS server : www.ovh.com
+Username for dynamic DNS service: OVH dynDNS username
+Password for dynamic DNS service: OVH dynDNS passowrd
+Re-enter password to verify: OVH dynDNS password (again)
+```
+you are all set. your domain name should point to your home IP address.
 
 # More on the case 
 
