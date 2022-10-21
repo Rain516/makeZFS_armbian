@@ -231,6 +231,7 @@ and if it change the script update it automatically.
 
 ```
 sudo apt-get install ddclient
+sudo apt install libio-socket-ssl-perl
 ```
 then you can enter the following value given by your registrat (OVH for me)
 ![image](https://user-images.githubusercontent.com/15912256/197188539-fc47749d-6dee-4c07-af22-b387624b7fdb.png)
