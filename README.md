@@ -96,6 +96,16 @@ sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/rep
 sudo apt update
 sudo apt install log2ram
 ```
+## test the RAM for faulty block
+do it quickly after receinving your board as you only have 30 day to report thoses problem to pine and get a new board for free in case of error.
+test the RAM for faulty block
+```
+sudo apt-get install memtester
+```
+
+```
+sudo memtester 3300 5
+```
 
 ## install ZFS and cockpit
 reconnect over ssh once the reboot is done
