@@ -37,6 +37,22 @@ here is how it looks like
 follow this guide to flash the sd card to update the SPI flash.
 if you plan to run the OS from the sd card directly you can skip this step
 https://wiki.pine64.org/index.php/NOOB#Flashing_u-boot_to_SPI_Flash
+here is what it say :
+
+This may be the simplest method of flashing u-boot to SPI. Download a dedicated image labelled u-boot-flash-spi.img.xz from [ayufan's github|https://github.com/ayufan-rock64/linux-u-boot/releases] and flash it to a microSD card, the same as you would with any OS image (to learn how to flash OS images to microSD please follow steps outlined in Section 3.
+
+Having flashed the image follow these steps:
+
+    Insert the SD into the ROCK64
+    Remove all other peripherals from the board
+    Make sure that the eMMC module is disconnected from the board
+    Apply power to the ROCK64
+    Wait (few seconds) until the the LEDs on the board will blink continually
+    Power off the board.
+
+The board is now ready to boot from USB 2.0/3.0 storage. 
+
+
 
 ## Install OS
 install armbian (jammy 22.08.1) on the sd card or the USB HDD depending of what you want to use
