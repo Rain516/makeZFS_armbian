@@ -273,6 +273,20 @@ Re-enter password to verify: OVH dynDNS password (again)
 ```
 you are all set. your domain name should point to your home IP address.
 
+# Trooble shooting
+### ZFS broken after apt upgrade
+```
+sudo su
+apt install python3-dev python3-setuptools python3-cffi
+sudo add-apt-repository ppa:jonathonf/zfs
+apt update
+git clone https://github.com/nathmo/makeZFS_armbian
+cd makeZFS_armbian
+python3 makeZFS_armbian.py
+apt install zfs-dkms zfs-zed zfsutils-linux
+sudo apt-get -y install linux-headers-current-rockchip64
+```
+if makeZFS_armbian.py fail, try to remove the broken dependency until it works
 # More on the case 
 
 the case is made to be versatil and accomodate up to 7 board or HDD (maybe double of that for small SBC)
