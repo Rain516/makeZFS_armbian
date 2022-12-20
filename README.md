@@ -160,6 +160,10 @@ sudo zpool status
 your pool is automatically mounted under /pool but you can change the location
 raidz2 use two drive for parity bit. you can use use raid1 for only one parity bit
 
+if you aldready have a ZFS pool from a previous install you can import it with 
+```
+sudo zpool import storagearray -f
+```
 ## setup docker and portainer
 docker allow you to run container, portainer is a nice web page to manage your portainer. its more user friendly than the shell at first
 here we create a volume on the ZFS array for portainer and then launche the portainer container
