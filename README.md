@@ -134,6 +134,7 @@ then install zfs and cokpit (give you a nice web dashboard under https://192.168
 sudo su
 apt install curl
 apt install cockpit cockpit-pcp
+apt install python3-dev python3-setuptools python3-cffi
 sudo add-apt-repository ppa:jonathonf/zfs
 apt update
 git clone https://github.com/nathmo/makeZFS_armbian
