@@ -1,11 +1,11 @@
 this repo contains instruction to make a descent NAS / home server using a rock pro 64 as it's heart.
 
 # Table of Contents
-- [Mechanical assembly](# Mechanical assembly of the case)
-- [Hardware requirement](# Hardware requirement)
-- [Software setup](# Software setup)
-- [More pictures](# final result)
-- [about the case](# More on the case)
+[Case assembly](#mechanical-assembly-of-the-case)
+[Hardware requirement](#mechanical-assembly-of-the-case)
+[Software setup](#mechanical-assembly-of-the-case)
+[More pictures](#mechanical-assembly-of-the-case)
+[about the case](#mechanical-assembly-of-the-case)
 
 # Mechanical assembly of the case
 i used white glue. it works. the last pannel is just held in place with the tight clearance. might work on a hinge later for easy access
