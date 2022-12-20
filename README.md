@@ -225,7 +225,11 @@ systemctl restart smbd
 
 ```
 
-if you're happy with it you can stop there. if you keep reading you will setup a VPN server to remotely connect to your network and a dynDNS in case your IP is not static
+if you're happy with it you can stop there. if you keep reading you will setup a DNS server, VPN server to remotely connect to your network and a dynDNS in case your IP is not static
+
+```
+curl -sSL https://install.pi-hole.net | bash
+```
 
 ```
 sudo curl -L https://install.pivpn.io | sudo bash
