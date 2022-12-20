@@ -1,4 +1,4 @@
-this repo contains instroction to make a descent NAS / home server using a rock pro 64 as it's heart.
+this repo contains instruction to make a descent NAS / home server using a rock pro 64 as it's heart.
 
 # Mechanical assembly of the case
 i used white glue. it works. the last pannel is just held in place with the tight clearance. might work on a hinge later
