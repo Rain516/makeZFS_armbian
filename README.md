@@ -1,9 +1,17 @@
 this repo contains instruction to make a descent NAS / home server using a rock pro 64 as it's heart.
 
-# Mechanical assembly of the case
-i used white glue. it works. the last pannel is just held in place with the tight clearance. might work on a hinge later
+# Table of Contents
+1. [Mechanical assembly](#Mechanical assembly of the case)
+2. [Hardware requirement](#Hardware requirement)
+3. [Software setup](#Software setup)
+4. [More pictures](#final result)
+5. [about the case](#More on the case)
 
-## Hardware requirement
+# Mechanical assembly of the case
+i used white glue. it works. the last pannel is just held in place with the tight clearance. might work on a hinge later for easy access
+![photo_2022-10-08_00-29-31](https://user-images.githubusercontent.com/15912256/194671253-f7bea648-9d09-4158-951b-4457fcbe93b9.jpg)
+
+# Hardware requirement
 you will need :
 
 * a rockPro64
@@ -14,6 +22,7 @@ you will need :
 * a good SD card or optionnally a USB HDD
 * a few MOLEX cable stub to make a connector for the RockPro
 
+# Software setup
 
 ## Flash RockPro64 USB Boot
 follow this guide to flash the sd card to update the SPI flash.
@@ -262,7 +271,6 @@ you are all set. your domain name should point to your home IP address.
 # final result
 
 here is how it looks like
-![photo_2022-10-08_00-29-31](https://user-images.githubusercontent.com/15912256/194671253-f7bea648-9d09-4158-951b-4457fcbe93b9.jpg)
 ![photo_2022-10-08_00-29-31 (3)](https://user-images.githubusercontent.com/15912256/194671251-cf19e09b-48c8-463a-979e-5322d387bdf1.jpg)
 ![photo_2022-10-08_00-29-31 (2)](https://user-images.githubusercontent.com/15912256/194671252-63074964-6d42-43d8-bb55-7aa28cb358b4.jpg)
 
