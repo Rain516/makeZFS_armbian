@@ -1,37 +1,19 @@
-makeZFS_armbian.py is a tool which make ZFS on your armbian linux (64 bit) automatically.
+this repo contains instroction to make a descent NAS / home server using a rock pro 64 as it's heart.
 
-# Usage:
-```
-sudo add-apt-repository ppa:jonathonf/zfs
-sudo apt update
-git clone https://github.com/nathmo/makeZFS_armbian
-cd makeZFS_armbian
-sudo python3 makeZFS_armbian.py
-apt install zfs-dkms zfs-zed zfsutils-linux
-```
-now you should be able to use ZFS on armbian
+# Mechanical assembly of the case
+i used white glue. it works. the last pannel is just held in place with the tight clearance. might work on a hinge later
 
-# Grand scheme of thing
-this script is used to install ZFS on a rockpro64 used as a low power NAS / server for domestic application
-
-if you want to replicate the whole NAS and not juste ZFS use the following insctruction
-
-## Initial setup
+## Hardware requirement
 you will need :
 
 * a rockPro64
 * a power supply (i used a standard computer PSU to power the hdd and the rockPro64)
 * a bunch of HDD (6x 2Tb in my case)
 * a fan with a molex connector (or two)
-* a case
-* a good SD card and optionnally a USB HDD
+* a case (remind me to release the file or use a normal computer case)
+* a good SD card or optionnally a USB HDD
 * a few MOLEX cable stub to make a connector for the RockPro
 
-here is how it looks like
-![photo_2022-10-08_00-29-31](https://user-images.githubusercontent.com/15912256/194671253-f7bea648-9d09-4158-951b-4457fcbe93b9.jpg)
-![photo_2022-10-08_00-29-31 (3)](https://user-images.githubusercontent.com/15912256/194671251-cf19e09b-48c8-463a-979e-5322d387bdf1.jpg)
-![photo_2022-10-08_00-29-31 (2)](https://user-images.githubusercontent.com/15912256/194671252-63074964-6d42-43d8-bb55-7aa28cb358b4.jpg)
-(it only draw 55 Watt with every disk spinning, probably less than that usually)
 
 ## Flash RockPro64 USB Boot
 follow this guide to flash the sd card to update the SPI flash.
@@ -50,9 +32,9 @@ Having flashed the image follow these steps:
     Wait (few seconds) until the the LEDs on the board will blink continually
     Power off the board.
 
-The board is now ready to boot from USB 2.0/3.0 storage. 
+The board is now ready to boot from USB 2.0 storage. 
 
-(try to use the USB 3.0 port with a USB 2.0 only cable extender to a USB3.0 HDD as this port allow more current to be drawn but saddly USB3.0 dont seems to be supported as a boot medium)
+(if you use a USB 3.0 UDD, try to use the USB 3.0 port with a USB 2.0 only cable extender to a USB3.0 HDD as this port allow more current to be drawn but saddly USB3.0 dont seems to be supported as a boot medium so the USB 2.0 extender force the HDD to fallback to USB 2.0)
 
 ## Install OS
 install armbian (jammy 22.08.1) on the sd card or the USB HDD depending of what you want to use
@@ -112,7 +94,8 @@ sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/rep
 sudo apt update
 sudo apt install log2ram
 ```
-## test the RAM for faulty block
+## test the hardware for faulty block
+#### RAM TEST
 do it quickly after receinving your board as you only have 30 day to report thoses problem to pine and get a new board for free in case of error.
 test the RAM for faulty block
 ```
@@ -123,24 +106,20 @@ sudo apt-get install memtester
 sudo memtester 3300 5
 ```
 
+#### HDD/SD/USB test
+dont buy them on aliexpress is usually a good start...
+
 ## install ZFS and cockpit
 reconnect over ssh once the reboot is done
 
 then install zfs and cokpit (give you a nice web dashboard under https://192.168.YYY.XXX:9090/
-![image](https://user-images.githubusercontent.com/15912256/194674108-69b36efa-8e62-4a1b-9cae-8dffc15cb7f5.png)
-(here is the cockpit interface)
+
 
 ```
 sudo su
 apt install curl
 apt install cockpit cockpit-pcp
-apt install python3-dev python3-setuptools python3-cffi
-sudo add-apt-repository ppa:jonathonf/zfs
-apt update
-git clone https://github.com/nathmo/makeZFS_armbian
-cd makeZFS_armbian
-python3 makeZFS_armbian.py
-apt install zfs-dkms zfs-zed zfsutils-linux
+sudo apt install zfs-dkms zfsutils-linux
 sudo apt-get -y install linux-headers-current-rockchip64
 apt install samba nfs-kernel-server
 apt install docker-compose
@@ -149,6 +128,8 @@ udo systemctl status sleep.target suspend.target hibernate.target hybrid-sleep.t
 sudo reboot now
 ```
 
+![image](https://user-images.githubusercontent.com/15912256/194674108-69b36efa-8e62-4a1b-9cae-8dffc15cb7f5.png)
+(here is the cockpit interface)
 
 ## create your ZFS pool
 
@@ -277,25 +258,18 @@ Re-enter password to verify: OVH dynDNS password (again)
 ```
 you are all set. your domain name should point to your home IP address.
 
-# Trooble shooting
-### ZFS broken after apt upgrade
-```
-sudo su
-apt install python3-dev python3-setuptools python3-cffi
-sudo add-apt-repository ppa:jonathonf/zfs
-apt update
-git clone https://github.com/nathmo/makeZFS_armbian
-cd makeZFS_armbian
-python3 makeZFS_armbian.py
-apt install zfs-dkms zfs-zed zfsutils-linux
-sudo apt-get -y install linux-headers-current-rockchip64
-```
-if makeZFS_armbian.py fail, try to remove the broken dependency until it works
+
+# final result
+
+here is how it looks like
+![photo_2022-10-08_00-29-31](https://user-images.githubusercontent.com/15912256/194671253-f7bea648-9d09-4158-951b-4457fcbe93b9.jpg)
+![photo_2022-10-08_00-29-31 (3)](https://user-images.githubusercontent.com/15912256/194671251-cf19e09b-48c8-463a-979e-5322d387bdf1.jpg)
+![photo_2022-10-08_00-29-31 (2)](https://user-images.githubusercontent.com/15912256/194671252-63074964-6d42-43d8-bb55-7aa28cb358b4.jpg)
+
+(it only draw 55 Watt with every disk spinning, probably less than that usually)
+
 # More on the case 
 
 the case is made to be versatil and accomodate up to 7 board or HDD (maybe double of that for small SBC)
 here is a sample of a few different configuration 
 ![image](https://user-images.githubusercontent.com/15912256/196444699-1ef1e6ca-c69f-47ab-9ae8-2a44b5a70875.png)
-
-
-here is how it looks on the inside withouth the cable on the way
