@@ -52,7 +52,7 @@ Having flashed the image follow these steps:
 
 The board is now ready to boot from USB 2.0/3.0 storage. 
 
-
+(try to use the USB 3.0 port with a USB 2.0 only cable extender to a USB3.0 HDD as this port allow more current to be drawn but saddly USB3.0 dont seems to be supported as a boot medium)
 
 ## Install OS
 install armbian (jammy 22.08.1) on the sd card or the USB HDD depending of what you want to use
