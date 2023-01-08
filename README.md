@@ -1,5 +1,20 @@
 this repo contains instruction to make a descent NAS / home server using a rock pro 64 as it's heart.
 
+it detail the installatio process of :
+* armbian
+* ZFS
+* syncthing (onedrive like syncronisation between your device)
+* cockpit (web interface to check the status of the server)
+* docker and portainer to deploy container using a GUI
+* samba
+* pivpn and pihole to act as a DNS that block add and give you remote access to your LAN
+
+the nice part of this setup is that even if the board dies, you can resetup everything and all your container who used your zpool storage as volume will come right back online from the portainer volume and start working withouth having to resetup everything.
+
+# update
+this repo contain a deprecated script to install zfs. now ZFS is supported by the package repository of armbian and is not needed anymore.
+i will leave it there in case it might be useful in the futur but you dont need to run it to install zfs using this guide.
+
 # Table of Contents
 - [Case assembly](#mechanical-assembly-of-the-case)
 - [Hardware requirement](#mechanical-assembly-of-the-case)
