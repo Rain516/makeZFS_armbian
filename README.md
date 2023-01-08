@@ -1,6 +1,6 @@
 this repo contains instruction to make a descent NAS / home server using a rock pro 64 as it's heart.
 
-it detail the installatio process of :
+it also include details for the installation process of :
 * armbian
 * ZFS
 * syncthing (onedrive like syncronisation between your device)
